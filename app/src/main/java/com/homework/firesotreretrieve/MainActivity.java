@@ -149,14 +149,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void RetrieveData() {
         db.collection("Notebook").orderBy("token")
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                         list.clear();
                         idList.clear();
                         nameList.clear();
-                        for (QueryDocumentSnapshot qs : queryDocumentSnapshots) {
+                        for (QueryDocumentSnapshot qs : value) {
                             Tutorial data = qs.toObject(Tutorial.class);
                             data.setId(qs.getId());
                             idList.add(data.getId());
@@ -170,3 +169,4 @@ public class MainActivity extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, nameList);
     }
 }
+
