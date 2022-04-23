@@ -47,7 +47,7 @@ public class AddDataActivity extends AppCompatActivity {
 
         FirebaseFirestore.getInstance().collection("Notebook")
                 .add(new Tutorial(title,description,priority,food,drink,token))
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                .addOnSuccessListener(this, new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         finish();

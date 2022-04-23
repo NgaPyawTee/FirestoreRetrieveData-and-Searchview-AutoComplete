@@ -15,16 +15,6 @@
         android:padding="8dp">
 
         <TextView
-            android:id="@+id/page_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:ellipsize="end"
-            android:text="Title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/white" />
-
-        <TextView
             android:id="@+id/note_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

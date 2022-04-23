@@ -50,7 +50,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         holder.title.setText(tutorial.getTitle());
         holder.description.setText(tutorial.getDescription());
         holder.priority.setText(tutorial.getPriority());
-        holder.pageNumber.setText(tutorial.getToken());
     }
 
     @Override
@@ -60,7 +59,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private TextView title,description,priority,pageNumber;
+        private TextView title,description,priority;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -68,7 +67,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             title = itemView.findViewById(R.id.note_title);
             description = itemView.findViewById(R.id.note_description);
             priority = itemView.findViewById(R.id.note_priority);
-            pageNumber = itemView.findViewById(R.id.page_number);
 
             itemView.setOnClickListener(this);
         }
